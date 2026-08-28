@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The app talks HTTPS everywhere except the local development backend, which
+  runs plain HTTP on a developer machine. Rather than switching cleartext on
+  globally, it is permitted for exactly the two hosts that need it:
+
+    10.0.2.2  - how the Android emulator reaches the host's localhost
+    localhost - a backend port-forwarded onto the device with `adb reverse`
+
+  To point a physical handset at a backend on your LAN, add that machine's IP
+  here as well and rebuild. A production build talks HTTPS and this file can be
+  removed entirely.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

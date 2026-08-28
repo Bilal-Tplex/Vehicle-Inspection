@@ -1,0 +1,394 @@
+{
+  "id": "standard-vehicle-inspection",
+  "name": "Standard Vehicle Inspection",
+  "version": 1,
+  "description": "25-point condition assessment. Subset of the full 209-point programme.",
+  "isDefault": true,
+  "updatedAt": "2026-08-01T00:00:00.000Z",
+  "gradingRules": {
+    "id": "standard",
+    "version": 1,
+    "statusPoints": { "pass": 2, "minor_issue": 1, "fail": 0 },
+    "maxPointsPerItem": 2,
+    "excludedStatuses": ["na", "pending"],
+    "bands": [
+      { "code": "A", "label": "Excellent", "minPercentage": 90 },
+      { "code": "B", "label": "Good", "minPercentage": 80 },
+      { "code": "C", "label": "Fair", "minPercentage": 70 },
+      { "code": "D", "label": "Poor", "minPercentage": 60 },
+      { "code": "F", "label": "Failed", "minPercentage": 0 }
+    ]
+  },
+  "categories": [
+    {
+      "id": "cat-exterior",
+      "code": "EXT",
+      "title": "Exterior",
+      "iconName": "exterior",
+      "sortOrder": 1,
+      "points": [
+        {
+          "id": "ext-01",
+          "categoryId": "cat-exterior",
+          "code": "EXT-01",
+          "title": "Body panels and paint",
+          "description": "Dents, scratches, panel gaps, repainted or mismatched panels.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 5,
+          "weight": 1,
+          "sortOrder": 1
+        },
+        {
+          "id": "ext-02",
+          "categoryId": "cat-exterior",
+          "code": "EXT-02",
+          "title": "Front and rear bumpers",
+          "description": "Cracks, misalignment, previous repair work.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 2
+        },
+        {
+          "id": "ext-03",
+          "categoryId": "cat-exterior",
+          "code": "EXT-03",
+          "title": "Headlights and indicators",
+          "description": "Function, lens clarity, moisture ingress, matching pair.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 3
+        },
+        {
+          "id": "ext-04",
+          "categoryId": "cat-exterior",
+          "code": "EXT-04",
+          "title": "Windshield and glass",
+          "description": "Chips, cracks, delamination, wiper contact area.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 4
+        },
+        {
+          "id": "ext-05",
+          "categoryId": "cat-exterior",
+          "code": "EXT-05",
+          "title": "Doors, handles and mirrors",
+          "description": "Opening and closing, alignment, power mirror operation.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 5
+        },
+        {
+          "id": "ext-06",
+          "categoryId": "cat-exterior",
+          "code": "EXT-06",
+          "title": "Underbody and corrosion",
+          "description": "Rust, accident repair, chassis straightness.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 5,
+          "weight": 1,
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "cat-interior",
+      "code": "INT",
+      "title": "Interior",
+      "iconName": "interior",
+      "sortOrder": 2,
+      "points": [
+        {
+          "id": "int-01",
+          "categoryId": "cat-interior",
+          "code": "INT-01",
+          "title": "Seats and upholstery",
+          "description": "Tears, staining, seat adjustment and locking.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 1
+        },
+        {
+          "id": "int-02",
+          "categoryId": "cat-interior",
+          "code": "INT-02",
+          "title": "Dashboard and instrument cluster",
+          "description": "Warning lamps, gauge operation, cracks in the dash.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 2
+        },
+        {
+          "id": "int-03",
+          "categoryId": "cat-interior",
+          "code": "INT-03",
+          "title": "Air conditioning and heating",
+          "description": "Cooling performance, blower speeds, unusual odour.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 2,
+          "weight": 1,
+          "sortOrder": 3
+        },
+        {
+          "id": "int-04",
+          "categoryId": "cat-interior",
+          "code": "INT-04",
+          "title": "Infotainment and speakers",
+          "description": "Head unit, screen, audio output, connectivity.",
+          "isRequired": false,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 2,
+          "weight": 1,
+          "sortOrder": 4
+        },
+        {
+          "id": "int-05",
+          "categoryId": "cat-interior",
+          "code": "INT-05",
+          "title": "Interior trim and roof lining",
+          "description": "Sagging headliner, missing trim, water marks.",
+          "isRequired": false,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 5
+        }
+      ]
+    },
+    {
+      "id": "cat-engine",
+      "code": "ENG",
+      "title": "Engine and Transmission",
+      "iconName": "engine",
+      "sortOrder": 3,
+      "points": [
+        {
+          "id": "eng-01",
+          "categoryId": "cat-engine",
+          "code": "ENG-01",
+          "title": "Engine condition and noise",
+          "description": "Cold start, idle stability, knocking or tapping.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 1
+        },
+        {
+          "id": "eng-02",
+          "categoryId": "cat-engine",
+          "code": "ENG-02",
+          "title": "Oil leakage",
+          "description": "Sump, head gasket, seals and the ground under the car.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 5,
+          "weight": 1,
+          "sortOrder": 2
+        },
+        {
+          "id": "eng-03",
+          "categoryId": "cat-engine",
+          "code": "ENG-03",
+          "title": "Coolant and radiator",
+          "description": "Coolant level and colour, radiator condition, fan operation.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 3
+        },
+        {
+          "id": "eng-04",
+          "categoryId": "cat-engine",
+          "code": "ENG-04",
+          "title": "Transmission and clutch",
+          "description": "Shift quality, slipping, clutch bite point.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 4
+        },
+        {
+          "id": "eng-05",
+          "categoryId": "cat-engine",
+          "code": "ENG-05",
+          "title": "Exhaust and emissions",
+          "description": "Smoke colour, leaks, mounting and silencer condition.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 5
+        }
+      ]
+    },
+    {
+      "id": "cat-tires",
+      "code": "TYR",
+      "title": "Tires and Wheels",
+      "iconName": "tires",
+      "sortOrder": 4,
+      "points": [
+        {
+          "id": "tyr-01",
+          "categoryId": "cat-tires",
+          "code": "TYR-01",
+          "title": "Front tyre tread depth",
+          "description": "Tread depth, uneven wear, sidewall damage, age.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 1
+        },
+        {
+          "id": "tyr-02",
+          "categoryId": "cat-tires",
+          "code": "TYR-02",
+          "title": "Rear tyre tread depth",
+          "description": "Tread depth, uneven wear, sidewall damage, age.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 2
+        },
+        {
+          "id": "tyr-03",
+          "categoryId": "cat-tires",
+          "code": "TYR-03",
+          "title": "Wheel rims and alignment",
+          "description": "Kerb damage, buckling, pull to one side on the road test.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 3
+        },
+        {
+          "id": "tyr-04",
+          "categoryId": "cat-tires",
+          "code": "TYR-04",
+          "title": "Spare wheel, jack and tools",
+          "description": "Presence and condition of the spare and the tool kit.",
+          "isRequired": false,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 2,
+          "weight": 1,
+          "sortOrder": 4
+        }
+      ]
+    },
+    {
+      "id": "cat-safety",
+      "code": "SAF",
+      "title": "Safety and Electrical",
+      "iconName": "safety",
+      "sortOrder": 5,
+      "points": [
+        {
+          "id": "saf-01",
+          "categoryId": "cat-safety",
+          "code": "SAF-01",
+          "title": "Brake performance",
+          "description": "Pedal feel, stopping distance, noise, disc and pad condition.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": true,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 1
+        },
+        {
+          "id": "saf-02",
+          "categoryId": "cat-safety",
+          "code": "SAF-02",
+          "title": "Parking brake",
+          "description": "Holds on an incline, travel, release mechanism.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 2,
+          "weight": 1,
+          "sortOrder": 2
+        },
+        {
+          "id": "saf-03",
+          "categoryId": "cat-safety",
+          "code": "SAF-03",
+          "title": "Seat belts",
+          "description": "Retraction, locking under load, webbing damage, all seats.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 4,
+          "weight": 1,
+          "sortOrder": 3
+        },
+        {
+          "id": "saf-04",
+          "categoryId": "cat-safety",
+          "code": "SAF-04",
+          "title": "Airbags and warning lights",
+          "description": "SRS lamp behaviour, visible airbag covers, prior deployment.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 4
+        },
+        {
+          "id": "saf-05",
+          "categoryId": "cat-safety",
+          "code": "SAF-05",
+          "title": "Battery and charging system",
+          "description": "Terminal corrosion, mounting, charge and alternator output.",
+          "isRequired": true,
+          "allowsNotApplicable": true,
+          "requiresPhotoOnFail": false,
+          "maxPhotos": 3,
+          "weight": 1,
+          "sortOrder": 5
+        }
+      ]
+    }
+  ]
+}

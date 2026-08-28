@@ -1,0 +1,21 @@
+# Repository-wide ignores. Each project also has its own .gitignore.
+
+# Build output. The release APK is ~55 MB and is published as a GitHub Release
+# asset rather than committed — build artefacts do not belong in git history.
+**/build/
+*.apk
+*.aab
+
+# Scratch
+screenshots/
+*.tmp
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# A nested clone of the GitHub repo, kept locally only.
+Vehicle Inspection/
